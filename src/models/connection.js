@@ -1,7 +1,4 @@
 const { MongoClient } = require('mongodb');
-const dotenv = require('dotenv');
-
-dotenv.config();
 
 const URI = process.env.MONGODB_URI;
 const DB_NAME = 'Todolist';
