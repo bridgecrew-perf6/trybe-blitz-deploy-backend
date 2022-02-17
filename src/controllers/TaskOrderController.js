@@ -20,13 +20,13 @@ const getAllStatusDesc = async (_req, res) => {
   res.status(200).json(tasks);
 };
 
-const getAllUpdatedAsc = async (_req, res) => {
-  const tasks = await TaskOrderService.getAllUpdatedAsc();
+const getAllCreatedAsc = async (_req, res) => {
+  const tasks = await TaskOrderService.getAllCreatedAsc();
   res.status(200).json(tasks);
 };
 
-const getAllUpdatedDesc = async (_req, res) => {
-  const tasks = await TaskOrderService.getAllUpdatedDesc();
+const getAllCreatedDesc = async (_req, res) => {
+  const tasks = await TaskOrderService.getAllCreatedDesc();
   res.status(200).json(tasks);
 };
 
@@ -35,6 +35,6 @@ module.exports = {
   getAllTitleDesc,
   getAllStatusAsc,
   getAllStatusDesc,
-  getAllUpdatedAsc,
-  getAllUpdatedDesc,
+  getAllCreatedAsc,
+  getAllCreatedDesc,
 };

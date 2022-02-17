@@ -20,13 +20,13 @@ const getAllStatusDesc = async () => {
   return tasks;
 };
 
-const getAllUpdatedAsc = async () => {
-  const tasks = await OrderTask.getAllUpdatedAsc();
+const getAllCreatedAsc = async () => {
+  const tasks = await OrderTask.getAllCreatedAsc();
   return tasks;
 };
 
-const getAllUpdatedDesc = async () => {
-  const tasks = await OrderTask.getAllUpdatedDesc();
+const getAllCreatedDesc = async () => {
+  const tasks = await OrderTask.getAllCreatedDesc();
   return tasks;
 };
 
@@ -35,6 +35,6 @@ module.exports = {
   getAllTitleDesc,
   getAllStatusAsc,
   getAllStatusDesc,
-  getAllUpdatedAsc,
-  getAllUpdatedDesc,
+  getAllCreatedAsc,
+  getAllCreatedDesc,
 };

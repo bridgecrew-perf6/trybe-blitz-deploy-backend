@@ -26,15 +26,15 @@ const getAllStatusDesc = async () => {
   return results;
 };
 
-const getAllUpdatedAsc = async () => {
+const getAllCreatedAsc = async () => {
   const db = await connection();
-  const results = await db.collection(DB_COLLECTION).find().sort({ updated: 1 }).toArray();
+  const results = await db.collection(DB_COLLECTION).find().sort({ createdAt: 1 }).toArray();
   return results;
 };
 
-const getAllUpdatedDesc = async () => {
+const getAllCreatedDesc = async () => {
   const db = await connection();
-  const results = await db.collection(DB_COLLECTION).find().sort({ updated: -1 }).toArray();
+  const results = await db.collection(DB_COLLECTION).find().sort({ createdAt: -1 }).toArray();
   return results;
 };
 
@@ -43,6 +43,6 @@ module.exports = {
     getAllTitleDesc,
     getAllStatusAsc,
     getAllStatusDesc,
-    getAllUpdatedAsc,
-    getAllUpdatedDesc,
+    getAllCreatedAsc,
+    getAllCreatedDesc,
 };
