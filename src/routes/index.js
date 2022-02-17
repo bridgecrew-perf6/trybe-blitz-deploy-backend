@@ -15,7 +15,7 @@ router.get('/tasks/title/asc', TaskOrderController.getAllTitleAsc);
 router.get('/tasks/title/desc', TaskOrderController.getAllTitleDesc);
 router.get('/tasks/status/asc', TaskOrderController.getAllStatusAsc);
 router.get('/tasks/status/desc', TaskOrderController.getAllStatusDesc);
-router.get('/tasks/updated/asc', TaskOrderController.getAllUpdatedAsc);
-router.get('/tasks/updated/desc', TaskOrderController.getAllUpdatedDesc);
+router.get('/tasks/created/asc', TaskOrderController.getAllCreatedAsc);
+router.get('/tasks/created/desc', TaskOrderController.getAllCreatedDesc);
 
 module.exports = router;
