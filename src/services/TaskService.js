@@ -11,9 +11,9 @@ const getAll = async () => {
 const create = async ({ title, status }) => {
   const taskError = await validate.requiredTaskData(title, status);
   if (taskError) return errors.invalidEntries;
-  const updated = new Date();
-  const { insertedId: _id } = await Task.create({ title, status, updated });
-  return { _id, title, status, updated };
+  const createdAt = new Date();
+  const { insertedId: _id } = await Task.create({ title, status, createdAt });
+  return { _id, title, status, createdAt };
 };
 
 const getById = async (id) => {
@@ -27,8 +27,9 @@ const update = async ({ id, title, status }) => {
   if (!ObjectId.isValid(id)) return errors.taskNotFound;
   const task = await Task.getById(id);
   if (!task) return errors.taskNotFound;
-  const { updated } = await Task.update({ _id: id, title, status, updated: new Date() });
-  return { _id: id, title, status, updated };
+  const { createdAt } = task;
+  await Task.update({ _id: id, title, status, createdAt });
+  return { _id: id, title, status, createdAt };
 };
 
 const remove = async (id) => {
